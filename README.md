@@ -1,19 +1,19 @@
-# @babel/core
+# @babel/helper-builder-binary-assignment-operator-visitor
 
-> Babel compiler core.
+> Helper function to build binary assignment operator visitors
 
-See our website [@babel/core](https://babeljs.io/docs/en/babel-core) for more information or the [issues](https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20core%22+is%3Aopen) associated with this package.
+See our website [@babel/helper-builder-binary-assignment-operator-visitor](https://babeljs.io/docs/en/babel-helper-builder-binary-assignment-operator-visitor) for more information.
 
 ## Install
 
 Using npm:
 
 ```sh
-npm install --save-dev @babel/core
+npm install --save @babel/helper-builder-binary-assignment-operator-visitor
 ```
 
 or using yarn:
 
 ```sh
-yarn add @babel/core --dev
+yarn add @babel/helper-builder-binary-assignment-operator-visitor
 ```

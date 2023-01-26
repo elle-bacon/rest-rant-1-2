@@ -1,14 +1,35 @@
-import type { SourceMapInput } from '@jridgewell/trace-mapping';
-export type { SourceMapSegment, DecodedSourceMap, EncodedSourceMap, } from '@jridgewell/trace-mapping';
-export type { SourceMapInput };
-export declare type LoaderContext = {
-    readonly importer: string;
-    readonly depth: number;
+import type { SourceMapSegment } from './sourcemap-segment';
+export interface SourceMapV3 {
+    file?: string | null;
+    names: readonly string[];
+    sourceRoot?: string;
+    sources: readonly (string | null)[];
+    sourcesContent?: readonly (string | null)[];
+    version: 3;
+}
+export interface EncodedSourceMap extends SourceMapV3 {
+    mappings: string;
+}
+export interface DecodedSourceMap extends SourceMapV3 {
+    mappings: readonly SourceMapSegment[][];
+}
+export interface Pos {
+    line: number;
+    column: number;
+}
+export declare type Mapping = {
+    generated: Pos;
+    source: undefined;
+    original: undefined;
+    name: undefined;
+} | {
+    generated: Pos;
     source: string;
-    content: string | null | undefined;
-};
-export declare type SourceMapLoader = (file: string, ctx: LoaderContext) => SourceMapInput | null | undefined | void;
-export declare type Options = {
-    excludeContent?: boolean;
-    decodedMappings?: boolean;
+    original: Pos;
+    name: string;
+} | {
+    generated: Pos;
+    source: string;
+    original: Pos;
+    name: undefined;
 };
