@@ -1,0 +1,18 @@
+const React = require('react')
+const Default = require('./default')
+
+function error404 () {
+    return (
+      <Default>
+          <main>
+              <h2>404: PAGE NOT FOUND</h2>
+              <p>Oops, sorry, we can't find this page!</p>
+              <div>
+                  <img src="https://i.kym-cdn.com/entries/icons/facebook/000/038/577/longfacedogheader.jpg" alt="Dog"/>
+              </div>
+          </main>
+      </Default>
+    )
+  }
+
+module.exports = error404
